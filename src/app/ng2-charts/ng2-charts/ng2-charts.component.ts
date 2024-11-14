@@ -8,7 +8,7 @@ import { BaseChartDirective } from 'ng2-charts';
   styleUrl: './ng2-charts.component.less'
 })
 export class Ng2ChartsComponent {
-  @ViewChild(BaseChartDirective) chart: BaseChartDirective<'bar'> | undefined;
+  @ViewChild(BaseChartDirective, {static : false}) chart: BaseChartDirective<'bar'> | undefined;
 
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     // We use these empty structures as placeholders for dynamic theming.

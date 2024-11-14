@@ -5,7 +5,7 @@ import { Ng2ChartsComponent } from './ng2-charts/ng2-charts/ng2-charts.component
 
 const routes: Routes = [
   {path: "",component: NgxChartsComponent},
-  {path: "/ng2-charts",component: Ng2ChartsComponent}
+  {path: "ng2-charts",component: Ng2ChartsComponent}
 ];
 
 @NgModule({

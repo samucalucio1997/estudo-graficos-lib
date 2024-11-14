@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { Ng2ChartsRoutingModule } from './ng2-charts-routing.module';
 import { Ng2ChartsComponent } from './ng2-charts/ng2-charts.component';
-import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
+import { BaseChartDirective, provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -15,7 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     CommonModule,
     Ng2ChartsRoutingModule,
-    BrowserModule
+    BrowserModule,
+    BaseChartDirective
   ],
   providers: [
     provideCharts(withDefaultRegisterables())
