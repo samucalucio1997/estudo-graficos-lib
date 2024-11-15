@@ -8,13 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    NgxChartsComponent, NgxChartsComponent
+    NgxChartsComponent
   ],
   imports: [
     CommonModule,
     NgxChartsRoutingModule,
-    BrowserAnimationsModule,
-    NgxChartsModule
+    BrowserAnimationsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })

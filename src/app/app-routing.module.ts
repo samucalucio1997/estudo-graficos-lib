@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { NgxChartsComponent } from './ngx-charts/ngx-charts/ngx-charts.component';
-import { Ng2ChartsComponent } from './ng2-charts/ng2-charts/ng2-charts.component';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  {path: "",component: NgxChartsComponent},
-  {path: "ng2-charts",component: Ng2ChartsComponent}
+  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
+  { path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) },
+  { path: 'ngx-charts', loadChildren: () => import('./ngx-charts/ngx-charts.module').then(m => m.NgxChartsModule) }
 ];
 
 @NgModule({

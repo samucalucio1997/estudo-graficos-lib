@@ -21,6 +21,7 @@ export class NgxChartsComponent implements OnInit{
   public xAxisLabel: string = 'Country';
   public showYAxisLabel = true;
   public yAxisLabel: string = 'Population';
+  public isDoughnut: boolean = false;
 
   public colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
