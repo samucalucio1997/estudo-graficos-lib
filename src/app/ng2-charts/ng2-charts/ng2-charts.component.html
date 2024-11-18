@@ -1,10 +1,41 @@
-<app-chart-host chartType="bar">
-    <canvas
-    baseChart
-    class="charts"
-    [data]="barChartData"
-    [options]="barChartOptions"
-    [type]="barChartType"
-    >
-    </canvas>
-</app-chart-host>
+<div>
+    <app-chart-host class="charts" chartType="bar">
+        <canvas
+        baseChart
+        class="charts"
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [type]="barChartType"
+        >
+        </canvas>
+    </app-chart-host>
+</div>
+<div>
+    <app-chart-host class="charts" chartType="pie">
+        <canvas 
+        baseChart 
+        [data]="pieChartData" 
+        [type]="pieChartType" 
+        [options]="barChartOptions">
+        </canvas>
+    </app-chart-host>
+</div>
+<div>
+    <app-chart-host class="charts" chartType="polarArea">
+        <canvas
+          baseChart
+          [data]="pieChartData"
+          [type]="polarAreaChartType"
+        >
+        </canvas>
+    </app-chart-host>
+</div>
+<div>
+    <app-chart-host class="charts" chartType="radar">
+        <canvas baseChart 
+        [data]="radarChartData"
+         [options]="barChartOptions"
+          [type]="radarChartType">
+        </canvas>
+    </app-chart-host>
+</div>

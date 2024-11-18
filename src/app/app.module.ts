@@ -10,6 +10,9 @@ import { BaseChartDirective, provideCharts, withDefaultRegisterables } from 'ng2
 import { Ng2ChartsComponent } from './ng2-charts/ng2-charts/ng2-charts.component';
 import { Ng2ChartsModule } from './ng2-charts/ng2-charts.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ReactHostComponent } from './recharts-components/react-host.componet';
+import { RechartsModule } from './recharts/recharts.module';
+import { NgApexchartsModule } from "ng-apexcharts";
 
 
 @NgModule({
@@ -21,7 +24,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     AppRoutingModule,
     NgxChartsModule,
     BrowserAnimationsModule,
-    Ng2ChartsModule
+    RechartsModule,
+    Ng2ChartsModule,
+    NgApexchartsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   providers: [
