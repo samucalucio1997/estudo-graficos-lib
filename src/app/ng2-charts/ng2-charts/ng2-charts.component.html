@@ -10,7 +10,7 @@
         </canvas>
     </app-chart-host>
 </div>
-<div>
+<!-- <div>
     <app-chart-host class="charts" chartType="pie">
         <canvas 
         baseChart 
@@ -19,10 +19,12 @@
         [options]="barChartOptions">
         </canvas>
     </app-chart-host>
-</div>
+</div> -->
 <div>
     <app-chart-host class="charts" chartType="polarArea">
+        <h5 style="text-align: center;">Atendimentos por profissional</h5>
         <canvas
+          style="display: block; margin-top: 20px;"
           baseChart
           [data]="pieChartData"
           [type]="polarAreaChartType"
@@ -30,12 +32,22 @@
         </canvas>
     </app-chart-host>
 </div>
-<div>
+<!-- <div>
     <app-chart-host class="charts" chartType="radar">
         <canvas baseChart 
         [data]="radarChartData"
          [options]="barChartOptions"
           [type]="radarChartType">
         </canvas>
+    </app-chart-host>
+</div> -->
+<div>
+    <app-chart-host class="charts" chartType="line">
+        <canvas
+    baseChart
+    [data]="lineChartData"
+    [options]="lineChartOptions"
+    [type]="lineChartType"
+  ></canvas>
     </app-chart-host>
 </div>

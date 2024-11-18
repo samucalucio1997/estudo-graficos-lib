@@ -32,6 +32,8 @@ export class Ng2ChartsComponent implements OnInit{
 
   public polarAreaChartType: ChartType = 'polarArea' as const;
 
+  public lineChartType: ChartType = 'line' as const;
+
   public barChartData: ChartData<'bar'> = {
     labels: ['maio', 'junho', 'julho', 'agosto', 'setetmbro', 'outubro', 'novembro'],
     datasets: [
@@ -42,17 +44,26 @@ export class Ng2ChartsComponent implements OnInit{
   };
 
   public pieChartData: ChartData<'pie', number[], string | string[]> = {
-    labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
+    labels: ["Mayrcon Profissional",
+    "Antonio",
+    "APRESENTAÇÃO - Profissional",
+    "Floriswaldo Apresentação",
+    "Antônio Rodrigues",
+    "Jefferson Ferreira MED",
+    "Julio Menacho",
+    "[CLINIC-2543] Profissional I"],
     datasets: [
       {
-        data: [28, 48, 40, 19, 86, 27, 90],
+        data: [8, 6, 6, 4, 3, 2, 1, 1],
         backgroundColor: [
-        '#FF9F40AA', // Original
+        '#A0522D', // Original
         '#36A2EB', // Original
         '#FFCE56', // Original
         '#4BC0C0', // Nova cor
         '#9966FF', // Nova cor
-        '#FF9F40', // Nova cor
+        '#FF9F40',
+        '#FF6347',
+        '#4B0082' // Nova cor
         ]
       },
     ],
@@ -72,8 +83,46 @@ export class Ng2ChartsComponent implements OnInit{
     labels: this.radarChartLabels,
     datasets: [
       { data: [65, 59, 90, 81, 56, 55, 40], backgroundColor:'', label: 'Series A' },
-      { data: [28, 48, 40, 19, 96, 27, 100], label: 'Series B' },
+      { data: [28, 48, 40, 19, 96, 27, 100], backgroundColor:'', label: 'Series B' },
     ],
+  };
+
+  public lineChartData: ChartConfiguration['data'] = {
+    datasets: [
+      {
+        data: [55017.79, 39500.18, 59357.5, 15791.09, 45524.86, 10985.11, 129068.28],
+        label: 'Receitas',
+        backgroundColor: 'rgba(148,159,177,0.2)',
+        borderColor: 'green',
+        pointBackgroundColor: 'rgba(148,159,177,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+        fill: 'origin',
+      },
+      {
+        data: [14611.77, 1222.22, 530, 60, 505, 0, 25213.6],
+        label: 'Despesas',
+        backgroundColor: 'rgba(77,83,96,0.2)',
+        borderColor: 'orange',
+        pointBackgroundColor: 'rgba(77,83,96,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(77,83,96,1)',
+        fill: 'origin',
+      },
+      {
+        data: [24888.41, 58135.28, 15261.09, 45464.86, 10480.11, 0],
+        label: 'Saldo',
+        borderColor: 'blue',
+        pointBackgroundColor: 'rgba(148,159,177,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+        fill: 'origin',
+      },
+    ],
+    labels: ['Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro'],
   };
 
   ngOnInit(): void {
@@ -115,4 +164,33 @@ export class Ng2ChartsComponent implements OnInit{
 
     this.chart?.update();
   }
+
+  public lineChartOptions: ChartConfiguration['options'] = {
+    elements: {
+      line: {
+        tension: 0.5,
+      },
+    },
+    scales: {
+      // We use this empty structure as a placeholder for dynamic theming.
+      y: {
+        position: 'left',
+      },
+      y1: {
+        position: 'right',
+        grid: {
+          color: 'rgba(255,0,0,0.3)',
+        },
+        ticks: {
+          color: 'red',
+        },
+      },
+    },
+
+    plugins: {
+      legend: { display: true }
+    },
+  };
+
+
 }
