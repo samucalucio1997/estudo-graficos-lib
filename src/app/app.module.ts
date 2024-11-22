@@ -13,11 +13,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ReactHostComponent } from './recharts-components/react-host.componet';
 import { RechartsModule } from './recharts/recharts.module';
 import { NgApexchartsModule } from "ng-apexcharts";
+import { ApexChartsComponent } from './apex-charts/apex-charts/apex-charts.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, NgxChartsComponent
+    AppComponent, NgxChartsComponent, ApexChartsComponent
   ],
   imports: [
     BrowserModule,

@@ -30,13 +30,17 @@ export class ApexChartsComponent {
     this.chartOptions = {
       series: [
         {
-          name: "High - 2013",
-          data: [28, 29, 33, 36, 32, 32, 33]
+          name: "receita",
+          data: [28, 29, 33, 36.52, 32.201, 32.402, 33.505]
         },
         {
-          name: "Low - 2013",
-          data: [12, 11, 14, 18, 17, 13, 13]
-        }
+          name: "saldo", 
+          data: [16, 17, 19, 18.4, 15.201, 19.402, 20.505]
+        },
+        {
+          name: "despesa",
+          data: [12, 11.541, 14, 18.120, 17, 13, 13]
+        },
       ],
       chart: {
         height: 350,
@@ -53,7 +57,7 @@ export class ApexChartsComponent {
           show: false
         }
       },
-      colors: ["#77B6EA", "#545454"],
+      colors: ["#6EA3C1", "#81CF91", "#FFB574"],
       dataLabels: {
         enabled: true
       },
@@ -61,7 +65,7 @@ export class ApexChartsComponent {
         curve: "smooth"
       },
       title: {
-        text: "Average High & Low Temperature",
+        text: "Recita x Despesa",
         align: "left"
       },
       grid: {
@@ -77,12 +81,12 @@ export class ApexChartsComponent {
       xaxis: {
         categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
         title: {
-          text: "Month"
+          text: "mês"
         }
       },
       yaxis: {
         title: {
-          text: "Temperature"
+          text: "R$ ( mil )"
         },
         min: 5,
         max: 40
