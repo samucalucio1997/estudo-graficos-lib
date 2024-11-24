@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import RechartsPieChart from '../../recharts-components/recharts-pie-chart';
 import RechartsLineChart from '../../recharts-components/recharts-line-chart';
+import RechartsBarChart from '../../recharts-components/recharts-bar-chart';
+import RechartsComposedChart from '../../recharts-components/recharts-composed-chart';
 
 @Component({
   selector: 'app-recharts',
@@ -8,8 +10,12 @@ import RechartsLineChart from '../../recharts-components/recharts-line-chart';
   styleUrl: './recharts.component.less'
 })
 export class RechartsComponent {
-  rechartsPieChart = RechartsPieChart;
-  rechartsLineChart = RechartsLineChart;
+  
+  public rechartsPieChart = RechartsPieChart;
+  public rechartsLineChart = RechartsLineChart;
+  public rechartsBarChart = RechartsBarChart;
+  public rechartsComposedChart = RechartsComposedChart;
+
   chartData = {
     data: [
       { name: 'Group A', value: 400 },
@@ -17,6 +23,46 @@ export class RechartsComponent {
       { name: 'Group C', value: 300 },
       { name: 'Group D', value: 200 },
     ],
+  };
+
+  dataBar = {
+    data: [
+      {
+        name: "Page A",
+        uv: 4000,
+        pv: 2400
+      },
+      {
+        name: "Page B",
+        uv: 3000,
+        pv: 1398
+      },
+      {
+        name: "Page C",
+        uv: 2000,
+        pv: 9800
+      },
+      {
+        name: "Page D",
+        uv: 2780,
+        pv: 3908
+      },
+      {
+        name: "Page E",
+        uv: 1890,
+        pv: 4800
+      },
+      {
+        name: "Page F",
+        uv: 2390,
+        pv: 3800
+      },
+      {
+        name: "Page G",
+        uv: 3490,
+        pv: 4300
+      }
+    ]
   };
 
   lineData = {

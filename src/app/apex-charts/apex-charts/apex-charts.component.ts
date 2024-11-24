@@ -22,7 +22,7 @@ export type ChartOptions = {
   styleUrl: './apex-charts.component.less'
 })
 export class ApexChartsComponent {
-  @ViewChild("chart")
+  
   chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
 

@@ -13,6 +13,7 @@ const RechartsLineChart: React.FC<{ data: { name: string; value: number }[] }> =
                 <Legend />
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" />
                 <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                <Line type="monotone" dataKey="amt" stroke="#595959" />
             </LineChart>
         </>
     );
