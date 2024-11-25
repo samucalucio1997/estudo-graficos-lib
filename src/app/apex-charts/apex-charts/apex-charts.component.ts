@@ -10,7 +10,8 @@ export type ChartOptions = {
   dataLabels: ApexDataLabels;
   markers: ApexMarkers;
   colors: string[];
-  yaxis: ApexYAxis;
+  labels: string[];
+  yaxis: ApexYAxis | ApexYAxis[];
   grid: ApexGrid;
   legend: ApexLegend;
   title: ApexTitleSubtitle;
@@ -25,8 +26,124 @@ export class ApexChartsComponent {
   
   chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
+  public chartOptions1: Partial<ChartOptions>;
+  chartd = {
+    type: 'bar',
+    toolbar: {
+      show: true, // Mostra a barra de ferramentas
+      tools: {
+        download: true // Habilita o menu de download
+      },
+      export: {
+        csv: {
+          filename: 'dados',
+          columnDelimiter: ',',
+          headerCategory: 'Categoria',
+          headerValue: 'Valor',
+          dateFormatter: (timestamp: number) => {
+            return new Date(timestamp).toLocaleDateString('pt-BR');
+          }
+        },
+        svg: {
+          filename: 'grafico'
+        },
+        png: {
+          filename: 'grafico'
+        }
+      },
+      menu: {
+        items: {
+          downloadSVG: 'Baixar SVG',
+          downloadPNG: 'Baixar PNG',
+          downloadCSV: 'Baixar CSV'
+        }
+      }
+    }
+  }
 
   constructor() {
+    this.chartOptions1 = {
+      series: [
+        {
+          name: "Website Blog",
+          type: "column",
+          data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160]
+        },
+        {
+          name: "Social Media",
+          type: "line",
+          data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16]
+        }
+      ],
+      chart: {
+        height: 350,
+        type: "line",
+        toolbar: {
+          show: true, // Mostra a barra de ferramentas
+          tools: {
+            download: false, // Ativa o botão padrão de download
+            // customIcons: [
+            //   {
+            //     icon: '<img src="data:image/svg+xml;base64,...svg_encoded_data..." width="20"/>', // Ícone customizado (pode ser um SVG)
+            //     title: 'Baixar Gráfico', // Texto ao passar o mouse
+            //     class: 'custom-download-btn', // Classe CSS (se necessário)
+            //     index: -1, // Posição no menu
+            //     click: function (chart: any, options: any) {
+            //       // Ação ao clicar no botão
+            //       chart.dataURI().then((uri: any) => {
+            //         const link = document.createElement('a');
+            //         link.href = uri.imgURI;
+            //         link.download = 'grafico.png'; // Nome do arquivo
+            //         link.click();
+            //       });
+            //     }
+            //   }
+            // ]
+          }
+        }
+      },
+      stroke: {
+        width: [0, 4]
+      },
+      title: {
+        text: "Traffic Sources"
+      },
+      dataLabels: {
+        enabled: true,
+        enabledOnSeries: [1]
+      },
+      labels: [
+        "01 Jan 2001",
+        "02 Jan 2001",
+        "03 Jan 2001",
+        "04 Jan 2001",
+        "05 Jan 2001",
+        "06 Jan 2001",
+        "07 Jan 2001",
+        "08 Jan 2001",
+        "09 Jan 2001",
+        "10 Jan 2001",
+        "11 Jan 2001",
+        "12 Jan 2001"
+      ],
+      xaxis: {
+        type: "datetime"
+      },
+      yaxis: [
+        {
+          title: {
+            text: "Website Blog"
+          }
+        },
+        {
+          opposite: true,
+          title: {
+            text: "Social Media"
+          }
+        }
+      ]
+    };
+
     this.chartOptions = {
       series: [
         {
